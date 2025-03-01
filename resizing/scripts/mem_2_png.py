@@ -25,6 +25,6 @@ def text_to_image(text_file, width, height, output_image):
 
 # Example usage
 text_file = "../dv/ouput_image.mem"  # Replace with your text file path
-width, height = 720, 1280  # Set the desired dimensions
+width, height = 1280, 720  # Set the desired dimensions
 output_image = "../dv/output_image.png"
 text_to_image(text_file, width, height, output_image)
