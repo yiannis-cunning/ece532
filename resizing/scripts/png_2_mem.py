@@ -14,8 +14,8 @@ def print_pixel_values(image_path):
     for y in range(height):
         for x in range(width):
             r, g, b = img.getpixel((x, y))
-            print(f"Pixel ({x}, {y}): R={r}, G={g}, B={b}")
+            print(f"{hex(r + (g << 8) + (b << 16))}")
 
 # Example usage
-image_path = "your_image.png"  # Replace with your PNG file path
+image_path = "../dv/input_image.png"  # Replace with your PNG file path
 print_pixel_values(image_path)
