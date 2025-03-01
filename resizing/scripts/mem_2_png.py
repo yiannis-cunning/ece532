@@ -9,7 +9,14 @@ def text_to_image(text_file, width, height, output_image):
     """Read a text file of hex color values and create a PNG image."""
     with open(text_file, "r") as file:
         hex_values = [line.strip() for line in file.readlines()]
-    
+
+    hex_values_new = []
+    for j in hex_values:
+        if(j != "xxxxxx"):
+            hex_values_new.append(j)
+    hex_values = hex_values_new
+    print(len(hex_values))    
+     
     # Ensure the number of pixels matches width * height
     if len(hex_values) != width * height:
         raise ValueError("Incorrect number of pixels for specified dimensions.")
@@ -25,6 +32,6 @@ def text_to_image(text_file, width, height, output_image):
 
 # Example usage
 text_file = "../dv/ouput_image.mem"  # Replace with your text file path
-width, height = 1280, 720  # Set the desired dimensions
+width, height = 126, 126  # Set the desired dimensions
 output_image = "../dv/output_image.png"
 text_to_image(text_file, width, height, output_image)
